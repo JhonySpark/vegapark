@@ -17,7 +17,7 @@ import {
   ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen'
 
-function App () {
+const App = () => {
   return (
     <>
       <StatusBar barStyle='dark-content' />
@@ -68,7 +68,7 @@ function App () {
       </SafeAreaView>
     </>
   )
-};
+}
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -109,4 +109,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default App()
+export default App
