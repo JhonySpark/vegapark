@@ -1,76 +1,44 @@
-import React from 'react'
-import {
-  SafeAreaView,
-  teste,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar
-} from 'react-native'
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions
-} from 'react-native/Libraries/NewAppScreen'
+import React, { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
+import { Text, Button } from 'react-native-elements'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 const App = () => {
+  const [loading, setLoading] = useState(false)
+
   return (
     <>
-      <StatusBar barStyle='dark-content' />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior='automatic'
-          style={styles.scrollView}
-        >
-          <Header />
-          {
-            global.HermesInternal == null
-              ? null
-              : (
-                <View style={styles.engine}>
-                  <Text style={styles.footer}>Engine: Hermes</Text>
-                </View>
-                )
-          }
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <View style={styles.container}>
+        <Text h1>
+          Teste de App
+        </Text>
+        <Button
+          title='Loading Button'
+          loading={loading}
+          onPress={() => loading ? setLoading(false) : setLoading(true)}
+          containerStyle={styles.btn}
+          buttonStyle={styles.button}
+        />
+      </View>
     </>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 15
+  },
+  btn: {
+    width: 200,
+    marginTop: 20
+  },
+  button: {
+    borderRadius: 9,
+    height: 50
+  },
   scrollView: {
     backgroundColor: Colors.lighter
   },
