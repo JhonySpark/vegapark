@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "standard --fix",
+    "new-label": "node label-script.js"
   },
   "lint-staged": {
     "*.js": "standard --fix"
@@ -18,7 +19,8 @@
     }
   },
   "dependencies": {
-    "husky": "^4.3.0",
+    "@react-native-firebase/app": "^9.0.0",
+    "axios": "^0.21.0",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-elements": "^3.0.0-alpha.1",
@@ -28,9 +30,11 @@
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
     "babel-jest": "^25.1.0",
+    "husky": "^4.3.0",
     "jest": "^25.1.0",
     "lint-staged": "^10.5.1",
     "metro-react-native-babel-preset": "^0.59.0",
+    "ora": "^5.1.0",
     "react-test-renderer": "16.13.1",
     "standard": "^16.0.2"
   },
