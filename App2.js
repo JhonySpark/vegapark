@@ -2,10 +2,10 @@ import React from 'react'
 import { StyleSheet, View, Image } from 'react-native'
 import { Text } from 'react-native-elements'
 /* import { Colors } from 'react-native/Libraries/NewAppScreen' */
-import { clientConfig } from './scrpit-test/buildConfig'
-import logo from './scrpit-test/images/logo.jpg'
-import img1 from './scrpit-test/images/img1.jpg'
-import img2 from './scrpit-test/images/img2.jpg'
+import { clientConfig } from './script-test/buildConfig'
+import logo from './script-test/images/logo.png'
+import img1 from './script-test/images/img1.jpg'
+import img2 from './script-test/images/img2.jpg'
 
 const App = () => {
   return (
