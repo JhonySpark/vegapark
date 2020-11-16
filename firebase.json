@@ -9,7 +9,7 @@
       "port": 9099
     },
     "functions": {
-      "port": null
+      "port": 5001
     },
     "ui": {
       "enabled": true
