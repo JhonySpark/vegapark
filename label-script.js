@@ -10,10 +10,10 @@ const rl = readline.createInterface({
 
 /* -- PARAMETROS CHAVE -- */
 let loading
-const configFilePath = './scrpit-test/'
+const configFilePath = './script-test/'
 const configFileName = 'buildConfig.js'
 
-rl.question('Digite o ClientID: ', function (id) {
+rl.question('Digite o clientID: ', function (id) {
   start(id)
   rl.close()
 })
@@ -37,11 +37,11 @@ async function start (id) {
     })
 
     client.imagens.forEach(element => {
-      downloadFile(element.name, element.path, element.url)
+      downloadFile(element.name, element.path, element.url, element.format)
     })
 
     client.files && client.files.forEach(element => {
-      downloadFile(element.name, element.path, element.url)
+      downloadFile(element.name, element.path, element.url, element.format)
     })
 
     loading.stopAndPersist({
@@ -58,14 +58,11 @@ async function start (id) {
 }
 
 //
-async function downloadFile (fileName, path, url) {
+async function downloadFile (fileName, path, url, format) {
   const fileRequest = await fetch(url)
   const file = await fileRequest.buffer()
 
-  let ext = url.split('.')
-  ext = ext[ext.length - 1]
-
-  fs.writeFile(`${path}${fileName}.${ext}`, file, function (err) {
+  fs.writeFile(`${path}${fileName}.${format}`, file, function (err) {
     if (err) throw err
   })
 }
